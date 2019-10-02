@@ -1,0 +1,182 @@
+
+/* id will always have a higher precdence than class */
+
+:root{
+    font-family: 'Open Sans'
+}
+
+body{
+    background-color: #3b404c;
+}
+
+header{
+    background-color: #28b4da;
+    /* I'm closing in on being able to have the header fixed */
+    /* I will need to move the other content down - and make sure it is shown above it */
+    /* https://stackoverflow.com/questions/3593594/how-to-keep-the-header-static-always-on-top-while-scrolling */
+    /* position: fixed; */
+    /* z-index: 10; */
+}
+
+h1{
+    color: white;
+}
+
+.container{
+    background-color: #2c2f38;
+    position: relative; left: 50%;
+    transform: translateX(-50%);
+}
+
+.menu-bar{
+        width: 800px;
+        background-color: white;
+    
+        border: solid;
+        border-width: 3px;
+        border-color: #28b4da;
+        border-radius: 5px;
+
+        position: relative; left: 50%;
+        transform: translateX(-50%);
+    }
+
+.trip-input{
+    width: 800px;
+
+    background-color: white;
+
+    border: solid;
+    border-width: 3px;
+    border-color: #28b4da;
+    border-radius: 5px;
+
+    position: relative; left: 50%;
+    transform: translateX(-50%);
+
+    /* position: relative;
+    top: 10px; 
+    I don't want to change the relative position because the over divs don't change relative to it*/
+}
+
+#inside-1{
+    background-color: rgb(0, 173, 173);
+/* This margin is what is putting the inner boxes off the outer box */
+    margin: 10px;
+
+    border: solid;
+    border-width: 1px;
+    border-color: #28b4da;
+    border-radius: 5px; 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+
+
+}
+
+#inside-2{
+    
+    background-color: rgb(0, 173, 173);
+
+    margin: 10px;
+
+    border: solid;
+    border-width: 1px;
+    border-color: #28b4da;
+    border-radius: 5px;
+
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+
+}    
+
+/* This is the CSS that relates to the form *******************************************************   */
+/**************************************************************************************************   */
+
+.tripForm {
+    font-family: 'Open Sans';
+    font-size: 0.8em;
+    /* I've added width twice */
+    width: 30em;
+    padding: 1em;
+    border: 1px solid #ccc;
+    /* I've added this */
+    border-radius: 5px;
+    background-color: #28b4da;
+    width: 800px;
+
+    /*  This centres to the parent element */
+    position: relative; left: 50%;
+    transform: translateX(-50%);
+}
+    
+    /* This means all elements in tripForm */
+.tripForm * {
+    /* I'm not sure what box-sizing means */
+    box-sizing: border-box;
+}
+    
+.tripForm fieldset {
+    border: none;
+    padding: 0;
+}
+    
+.tripForm legend,
+.tripForm label {
+    padding: 0;
+    font-weight: bold;
+}
+    
+.tripForm label.choice {
+    font-size: 0.9em;
+    font-weight: normal;
+}
+    
+.tripForm label {
+    text-align: left;
+    display: block;
+}
+    
+.tripForm input[type="text"],
+.tripForm input[type="datetime-local"],
+.tripForm select,
+.tripForm textarea {
+    float: right;
+    width: 60%;
+    border: 1px solid #ccc;
+
+    font-family: 'Open Sans';
+    font-size: 0.9em;
+    padding: 0.3em;
+}
+    
+.tripForm textarea {
+    height: 100px;
+    }
+    
+.tripForm input[type="radio"],
+.tripForm input[type="checkbox"] {
+    margin-left: 40%;
+}
+    
+.tripForm button {
+    padding: 1em;
+    border-radius: 0.5em;
+    background: #eee;
+    border: none;
+    font-weight: bold;
+    margin-left: 40%;
+    margin-top: 1.8em;
+    }
+    
+ .tripForm button:hover {
+    background: #ccc;
+    cursor: pointer;
+ }
+
+/*
+These are some colours I dan play around with
+#28b4da
+#ffffff
+#1d282b
+#000000
+#fcfaea
+*/

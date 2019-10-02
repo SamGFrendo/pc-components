@@ -1,0 +1,188 @@
+<!--
+This is where I am testing building compenents for CT tech. Initially, I need 1. Add trip template 2. List trip template
+3. Schedule trip 4. Organisation login.
+
+I am starting off seeing how to save a form to a js object and load a js object into an output.
+
+I think I probably want to add stuff to my MongoDB database - I'm currently saving to local storage
+-->
+
+<!-- https://stackoverflow.com/questions/11563638/how-do-i-get-the-value-of-text-input-field-using-javascript -->
+
+<!-- Can I push to github?? -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+    <title>PC Compontents</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css">
+    <!-- I want to use JQuery to manage components - It would be nice to have a dropdown button -->
+    <!-- I would like to use JQuery to serialise the form input -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+        console.log( "ready!" );
+        //I can use JQuery to target an html Element and add a css class
+        $("#AddDay").addClass("animated bounce");
+    });
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1><strong>Testing PC components</strong></h1>
+    </header>
+    <div class=container>
+        <div class=menu-bar>
+            <h2>This is where the menu bar goes</h2>
+        </div>
+        <br>
+        <div class=trip-input>
+            <div id=inside-1>
+                <h2 id=tripTitle1>Title of the first trip - I want this to change</h2>
+                <h3>Description of second trip</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem, quaerat alias a omnis possimus laudantium, necessitatibus dolor asperiores ipsum molestiae vero magnam. Est magnam enim eaque dignissimos sequi quae ratione?</p>
+            </div>
+
+            <div id=inside-2>
+                <h2 id=title-2>Title of the second trip</h2>
+                <h3 id=desc-2>Description of first trip</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem, quaerat alias a omnis possimus laudantium, necessitatibus dolor asperiores ipsum molestiae vero magnam. Est magnam enim eaque dignissimos sequi quae ratione?</p>
+            </div>
+
+        <p>I want to make a set number of boxes appear, depending on parameter in js</p>
+        
+        <!-- This div is where the boxes appear when I want to add a day -->
+        <div id=magicBox></div>
+
+        <!-- Would be nice to add a Remove day button -->
+        <button onclick="addInput()" id="AddDay">Add day</button>
+
+        <!-- putLocal is doing some funny stuff!  -->
+        <button onclick="putLocal()">Save to local storage</button> 
+        
+        <button onclick="getLocal()">Display from local storage</button>
+
+        <button onclick="clearLocal()">Clear local storage</button>
+        
+        </div>
+    <div>
+
+    </div>
+
+
+    </div>
+
+    <br>
+<!-- This is where I start playing around with the form for inputting the trip ----------------------------------------->
+<!-- **************************************************************************************************************** -->
+<!-- The 'action' attribute specifies the URI/URL of the page that will process the form
+The 'enctype' attribute specifies the content type used to encode the form data set when it's submitted to the server. It is not
+necessary in my initial use case
+The 'method' Specifies the HTTP method to use when the form is submitted. Possible values: get (The form data is appended
+to the URL when submitted. This is the default value.) post (The form data is not appended to the URL.) -->
+
+<form class="tripForm" id="tripForm" method="get" enctype="application/x-www-form-urlencoded" action="/html/codes/html_form_handler.cfm">
+    <p>
+        <label>Name
+        <input type="text" id="trip_name">
+        </label>
+    </p>
+
+    <p>
+        <label>Description
+        <input type="text" id="trip_desc">
+        </label>
+    </p>
+
+    <p>
+        <label>Price
+        <input type="text" id="trip_price">
+        </label>
+    </p>
+
+    <p>
+        <label>Length
+        <input type="text" id="trip_lenght">
+        </label>
+    </p>
+
+    <!-- This is a field set of type radio -->
+    <!-- <fieldset>
+        <legend>Trip type</legend>
+            <p>
+                <label class="choice">
+                <input type="radio" name="trip-type" > Trekking
+                </label>
+            </p>
+            <p>
+                <label class="choice">
+                <input type="radio" name="trip-type" > Mountaineering
+                </label>
+            </p>
+            <p>
+                <label class="choice">
+                <input type="radio" name="trip-type" > Culture
+            </label>
+        </p>
+    </fieldset> -->
+
+    <!-- Input type "datetime-local" HTML5 is picking this up for us -->
+    <!-- I should change this to just date - that would be more realistic -->
+    <!-- <p>
+        <label>Start Date/Time
+            <input type="datetime-local" name="pickup_time">
+        </label>
+    </p> -->
+
+    <!-- <p>
+        <label>Trip start
+            <select id="pickup_place" name="pickup_place">
+                <option value="" selected="selected">Select One</option>
+                <option value="office" >Taxi Office</option>
+                <option value="town_hall" >Town Hall</option>
+                <option value="telepathy" >We'll Guess!</option>
+            </select>
+        </label>
+    </p>
+     -->
+    <!-- <p>
+        <label>Trip end
+            <input type="text" name="dropoff_place" required list="destinations">
+        </label>
+
+        <datalist id="destinations">
+            <option value="Peru">
+            <option value="Lima">
+            <option value="Florida">
+        </datalist>
+    </p> -->
+
+    <!-- <p>
+        <label>Special Instructions
+            <textarea name="comments" maxlength="500"></textarea>
+        </label>
+    </p> -->
+
+
+    <button id="save">Save</button>
+</form>
+
+<!-- It would be good to be able to get the form to save and reload -->
+
+
+
+
+
+
+<!-- Link to script at the bottom - move to top and put on reload? -->
+<script src="script.js"></script>
+
+
+</body>
+</html>
