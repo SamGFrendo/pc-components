@@ -40,6 +40,9 @@ let tripDurationTest = {
     }
 }
 
+//Forms have a form data object on them? 
+//Ian would grab the individual things (using JQuary or whatever) - then combine them into an object
+
 
 //When called adds a new input box
 //Can we make it so we remove an input box?
@@ -72,6 +75,7 @@ function clearLocal() {
 
 
 //Seeing if I can use JQuery to serilise forms - It doesn't seem to be working
+//Maybe the input's have to have name attributes for this to work
 $( "tripForm" ).on( "submit", function( event ) {
   event.preventDefault();
   console.log( $( this ).serialize() );
@@ -82,10 +86,23 @@ $( "tripForm" ).on( "submit", function( event ) {
 /*This is working but only be doing each Element one by one - I would like it to build JSON to save in local storage
 This looks at the form that I've created and goes through each of the fields and saves it to local storage
 I was getting confused because local storage was not being cleared (I've added a clear button now)
-How do I create a JSON object from a form!*/
+How do I create a JSON object from a form!
+
+Look into flexbox as well*/
 
 var submit = document.getElementById("save");
 submit.onclick = function(event) {
+
+  var myDays = [];
+  //Ian added this cos he's a hero
+  document.querySelectorAll('#magicBox input').forEach(input => { if(input.value !== '') myDays.push(input.value); } );
+  console.log(myDays);
+  
+  var myObj = {
+    name: document.getElementById("trip_name").value,
+    description: document.getElementById("trip_desc").value,
+    days: myDays
+  };
   //Preventing default stops the form action being carried out
   event.preventDefault();
   let tripName = document.getElementById("trip_name");
@@ -93,6 +110,7 @@ submit.onclick = function(event) {
   let tripDesc = document.getElementById("trip_desc");
     localStorage.setItem("trip_desc", tripDesc.value);
   console.log(localStorage)
+  console.log(myObj)
 }
 
 /*This works now

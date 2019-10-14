@@ -1,0 +1,99 @@
+
+/* id will always have a higher precdence than class */
+
+:root{
+    font-family: 'Open Sans'
+}
+
+body{
+    background-color: #3b404c;
+}
+
+header{
+    background-color: #28b4da;
+    color: white;
+}
+
+/* Consider setting parameters for h1, h2, h3 */
+
+p{
+    font-size: 0.875em
+}
+
+.container{
+    background-color: #2c2f38;
+}
+
+.trip-container{
+    background-color: white;
+
+    width: 800px;
+    height: 1000px;
+
+    border: solid; border-width: 3px; border-color: #28b4da; border-radius: 5px;
+    
+    /* Centrally aligns .trip relative to .trip-container */
+    margin: auto;
+}
+
+.trip{
+    background-color: rgb(0, 173, 173);
+
+    border: solid; border-width: 3px; border-color: #28b4da; border-radius: 5px;
+
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+
+    /* Centrally aligns .trip relative to .trip-container */
+    margin: auto;
+    width: 95%; /* Of the parent element */
+
+    /* Padding either side of text */
+    padding: 10px;
+    /* Gap between each trip */
+    margin-top: 10px;
+}
+
+.trip-title{
+    /* background-color: #757881; */
+}
+
+.trip-description{
+    /* background-color: #757881; */
+}
+
+.trip-top{
+    display: flex;
+}
+.trip-top-left{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.trip-top-right{
+    border: solid; border-width: 1px; border-color: #000000;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.trip-price{
+    /* background-color: #757881; */
+}
+
+.trip-size{
+    /* background-color: #757881; */
+}
+
+.trip-itinerary{
+    /* background-color: #757881; */
+}
+
+/*
+These are some colours I dan play around with
+#28b4da
+#ffffff
+#1d282b
+#000000
+#fcfaea
+*/
