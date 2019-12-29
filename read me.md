@@ -2,7 +2,14 @@
 
 I want to build a CRUD SPA
 
-Practicing using JS
+ToDo: Make sure I put everthing on GitHub
+
+Initial focus will be user login to add their details and view their trip
+
+1. Need to figure out how to build a login page
+2. Need to figure out how to store information in a database
+     - combine the other database app that was build with this project
+
 Node JS for an API to a MongoDB database
 
 # Some useful points
