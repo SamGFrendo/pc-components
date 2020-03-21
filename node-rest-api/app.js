@@ -7,7 +7,7 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
-//Find out what require is doing - I think I'm importint a module from another file
+//Find out what require is doing - I think I'm importing a module from another file
 const productRoutes = require('./api/routes/products');
 const orderRoutes = require('./api/routes/orders');
 
